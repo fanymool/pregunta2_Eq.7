@@ -13,8 +13,13 @@ function Respuesta() {
 function Pregunta() {
 
 }
-function Juego() {
-
+function Juego(player1, player2) {
+    const contenedor = document.body;
+    while (contenedor.firstChild) {
+        contenedor.removeChild(contenedor.firstChild);
+    }
+    console.log("Nombre del jugador 1: " + player1);
+    console.log("Nombre del jugador 2: " + player2);
 }
 function iniciar() {
     const contenedor = document.body;
@@ -44,7 +49,7 @@ function iniciar() {
     player1Img.src = "https://www.clipartmax.com/png/full/467-4674712_six-of-them-representing-each-of-the-categories-personaje-de-ciencia-preguntados.png";
     player1Img.alt = "matrazverde";
     player1Img.width = "180";
-    player1Img.height = "407";
+    player1Img.height = "400";
 
     const player1InputDiv = document.createElement("div");
     const player1Input = document.createElement("input");
@@ -64,7 +69,7 @@ function iniciar() {
     player2Img.src = "https://www.seekpng.com/png/full/30-302967_sword-preguntados-personaje-entretenimiento.png";
     player2Img.alt = "espada";
     player2Img.width = "180";
-    player2Img.height = "407";
+    player2Img.height = "400";
 
     const player2InputDiv = document.createElement("div");
     const player2Input = document.createElement("input");
@@ -83,6 +88,15 @@ function iniciar() {
     const playBtn = document.createElement("button");
     playBtn.id = "playBtn";
     playBtn.textContent = "Iniciar el juego";
+    playBtn.addEventListener("click", () => {
+        const player1 = document.getElementById("play1").value;
+        const player2 = document.getElementById("play2").value;
+        if (player1 == "" || player2 == "") {
+            alert("Debes ingresar un nombre para cada jugador");
+        } else {
+           Juego(player1, player2); 
+        }
+    });
 
     contenedor.appendChild(playBtn);
 }
