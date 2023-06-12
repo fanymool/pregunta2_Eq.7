@@ -14,14 +14,12 @@ function Pregunta() {
 
 }
 function Juego(player1, player2) {
-    console.log("Nombre del jugador 1: " + player1);
-    console.log("Nombre del jugador 2: " + player2);
-    
+    //Esta es para elmiminar a todos los hijos del contenedor y limpiar la pantalla aaa
     const contenedor = document.body;
     while (contenedor.firstChild) {
         contenedor.removeChild(contenedor.firstChild);
     }
-
+    
     link.href = './statics/styles/juego.css';
     document.head.appendChild(link);
     
