@@ -3,6 +3,19 @@ link.rel = 'stylesheet';
 link.href = './statics/styles/index.css';
 document.head.appendChild(link);
 
+
+function Victoria() {
+
+}
+function Respuesta() {
+
+}
+function Pregunta() {
+
+}
+function Juego() {
+
+}
 function iniciar() {
     const contenedor = document.body;
 
