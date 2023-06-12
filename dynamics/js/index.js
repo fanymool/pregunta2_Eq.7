@@ -1,10 +1,8 @@
-// Añade los estilos al documento
 let link = document.createElement('link');
 link.rel = 'stylesheet';
-link.href = './statics/styles/index.css'; // Reemplaza con la ruta correcta de tu archivo CSS
+link.href = './statics/styles/index.css';
 document.head.appendChild(link);
 
-// Inicializa la pantalla de inicio
 function iniciar() {
     const contenedor = document.body;
 
