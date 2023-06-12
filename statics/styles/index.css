@@ -1,0 +1,86 @@
+/* =============FONTS=========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@400;500;700;800;900&family=Lilita+One&display=swap');
+/*  font-family: 'Chivo', sans-serif;
+font-family: 'Lilita One', cursive;*/
+
+body{
+    font-family: 'Chivo', sans-serif;
+    background-color: rgb(28, 29, 30);
+}
+/* TEXT WHITE WELCOME=============================================*/
+#welcome{
+    color: rgb(253, 255, 241);
+}
+#prguntadosTI{
+    font-family: 'Lilita One', cursive;
+    font-weight: 400;
+    font-size: 120px;
+    color: rgb(253, 255, 241);
+}
+
+#welCome{
+    text-align: center;
+}
+
+#players{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+}
+#img1{
+    margin-left: 3.7rem;
+}
+#img2{
+    margin-left: 3.7rem;
+}
+
+.playYers{
+    background-color: rgb(234, 230, 225);
+    padding: 3rem;
+    border-radius: 3rem;
+}
+#play1{
+    font-family: 'Chivo', sans-serif;
+    font-size: x-large;
+    text-align: center;
+    background-color: rgb(155, 231, 166);
+    border-color: rgb(23, 113, 53);
+    border-radius: 0.7rem;
+    border-style: solid;
+    padding: 1rem;
+}
+#play2{
+    font-family: 'Chivo', sans-serif;
+    font-size: x-large;
+    text-align: center;
+    background-color: rgb(155, 192, 231);
+    border-color: rgb(34, 23, 113);
+    border-radius: 0.7rem;
+    border-style: solid;
+    padding: 1rem;
+}
+
+#playB{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 5rem;
+}
+
+#playBtn{
+    color: rgb(149, 44, 31);
+    font-family: 'Lilita One', cursive;
+    font-weight: 400;
+    font-size: 40px;
+    padding: 2rem;
+    border-style: outset;
+    border-color: rgb(211, 195, 19);
+    border-width: 0.8rem;
+}
+#playBtn:hover{
+    background-color: rgb(232, 230, 78);
+}
+#playBtn:active{
+    background-color: rgb(255, 145, 42);
+}
