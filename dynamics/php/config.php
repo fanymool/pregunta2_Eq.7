@@ -9,8 +9,13 @@
         return $conexion;
     }
 ?>
-<!-- require "config.php";
-    $conexion = connect();
-    if(!$conexion){
-        echo "No se pudo conectar con la base de datos";
-    }else{} -->
+function generarRespaldo()
+{
+$command = "mysqldump -u" . USER . " -p" . PASS . " " . DB . " > " . RUTA.nRespaldo;
+
+system($command, $output);
+
+if ($output !== 0) {
+echo 'Ocurrió un error al crear el respaldo de la base de datos.';
+}
+}
