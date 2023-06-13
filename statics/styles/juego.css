@@ -2,69 +2,83 @@
 @import url('https://fonts.googleapis.com/css2?family=Chivo:wght@400;500;700;800;900&family=Lilita+One&display=swap');
 
 /* ========================ETIQUETAS========================= */
-body{
+body {
     font-family: 'Chivo', sans-serif;
     background-color: rgb(28, 29, 30);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
 }
 
 header h1 {
     font-family: 'Lilita One', cursive;
-    font-weight: 400;
-    font-size: 120px;
+    font-size: 4rem;
     color: rgb(253, 255, 241);
     text-align: center;
 }
 
 main {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin-top: 2rem;
 }
 
 section#ruleta {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-grow: 2;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: rgb(148, 98, 162);
+    justify-content: space-between; /* Distribuir los elementos, NO MOVER*/
 }
 
 section#ruleta p {
     color: rgb(253, 255, 241);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    white-space: pre-line; /* Permite saltos de línea con \n , escencial para el diseño asjjs*/
 }
 
+
 section#ruleta button#girar {
-    font-size: 40px;
-    padding: 2rem;
-    border-style: outset;
-    border-color: rgb(211, 195, 19);
-    border-width: 0.8rem;
+    font-size: 1.2rem;
+    padding: 1rem;
+    border: none;
+    background-color: rgb(151, 62, 176);
+    border-radius: 1rem;
 }
 
 section#ruleta button#girar:hover {
-    background-color: rgb(232, 230, 78);
-}
-
-section#ruleta button#girar:active {
-    background-color: rgb(255, 145, 42);
-    color: white;
+    background-color: rgb(65, 22, 77);
 }
 
 section#player1, section#player2 {
+    flex-grow: 1;
+    margin: 0 1rem;
     background-color: rgb(253, 255, 241);
-    padding: 3rem;
-    border-radius: 3rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-section#player1 h2, section#player2 h2 {
-    font-family: 'Chivo', sans-serif;
-    font-size: x-large;
-}
-
-section#player1 h3, section#player2 h3 {
-    font-family: 'Chivo', sans-serif;
-    font-size: large;
-}
-
+section#player1 h2, section#player2 h2,
+section#player1 h3, section#player2 h3,
 section#player1 p, section#player2 p {
-    font-family: 'Chivo', sans-serif;
-    font-size: medium;
+    margin: 0.5rem 0;
 }

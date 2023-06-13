@@ -23,7 +23,7 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    
+
 }
 .playerImage{
     background-color: rgb(253, 255, 241);
