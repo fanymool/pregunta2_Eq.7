@@ -1,0 +1,57 @@
+
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: #222324;
+    
+	width: 100%;
+	height: 100vh;
+}
+.contenedor{
+	padding: 10px;
+	width: 980px;
+	max-width: calc(100% - 20px);
+	margin: auto;
+	margin-top: 50px;
+	color: #fff;
+	font-family: Arial;
+}
+.subject{
+	margin-top: 20px;
+	text-align: center;
+	margin: auto;
+	position: relative;
+}
+h1{
+	text-align: center;
+}
+canvas{
+	margin-top: 10px;
+	position: relative;
+	z-index: 1;
+}
+button{
+	position: relative;
+	padding: 10px 20px;
+	font-size: 18px;
+	background: #bfad0f;
+	color: #fff;
+	border-style: none;
+    border-radius: 3rem;
+	z-index: 10;
+	cursor: pointer;
+	margin-top: 10px;
+}
+.choose{
+	position: absolute;
+	clip-path: polygon(50px 0px, 100px 0px, 75px 100px);
+	background: rgb(208, 21, 21);
+	width: 100px;
+	height: 100px;
+	top: 0%;
+	right: 50%;
+	z-index: 10;
+	box-shadow: 0 0 3px #eae6e699;
+}
