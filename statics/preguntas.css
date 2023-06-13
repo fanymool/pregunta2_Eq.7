@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@400;500;700;800;900&family=Lilita+One&display=swap');
+
+body{
+    font-family: 'Chivo', sans-serif;
+    background-color: rgb(28, 29, 30);
+    color: black;
+}
+
+.preguntass{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 3rem;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    /* text-align: center; */
+}
+
+.preguntass h1{
+    text-align: center;
+}
+
+.preguntas{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.pregunta{
+    background-color: rgb(28, 29, 30);
+    border-radius: 30px;
+    padding: 1rem 2rem;
+    color: white;
+}
+
+.pregunta:hover{
+    background-color: white;
+    color: rgb(28, 29, 30);
+    border: solid 1px rgb(28, 29, 30);
+}
