@@ -1,7 +1,7 @@
 <?php
     const DBHOST = "localhost";
-    const DBUSER = "root";
-    const DBPASS = "";
+    const DBUSER = "danibutnotdani";
+    const DBPASS = "danibutnotdani";
     const DBNAME = "preguntados";
 
     function connect(){

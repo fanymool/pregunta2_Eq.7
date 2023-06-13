@@ -1,18 +1,61 @@
-let link = document.createElement('link');
-link.rel = 'stylesheet';
-link.href = './statics/styles/principal.css';
-document.head.appendChild(link);
-function Victoria() {
+let datos = [];
+let materiasObtenidasPlayer1 = [];
+let materiasObtenidasPlayer2 = [];
 
+function cargarDatos(){
+    fetch('./dynamics/php/recuperarDatos.php')
+        .then(response => response.json())
+        .then(data => {
+            datos = data;
+        });
 }
-function Respuesta() {
 
+function Pregunta(nMateria) {
+    const materia = datos.find(materia => materia.materia === nMateria);
+    if (!materia) {
+        console.error(`No se encontró ninguna materia con el nombre "${nMateria}"`);
+        return;
+    }
+
+    const preguntas = materia.preguntas;
+    const pregunta = preguntas[Math.floor(Math.random() * preguntas.length)];
+
+    mostrarPregunta(pregunta, nMateria);
 }
-function Pregunta(materia) {
-    console.log("La materia seleccionada es: " + materia); //Funciona
+
+function mostrarPregunta(pregunta, materia) {
+    const popup = document.createElement('div');
+    popup.style.position = 'fixed';
+    popup.style.top = '50%';
+    popup.style.left = '50%';
+    popup.style.transform = 'translate(-50%, -50%)';
+    popup.style.padding = '20px';
+    popup.style.backgroundColor = '#fff';
+    popup.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.1)';
+
+    const preguntaElem = document.createElement('p');
+    preguntaElem.textContent = pregunta.pregunta;
+    popup.appendChild(preguntaElem);
+
+    for (let i = 0; i < pregunta.respuestas.length; i++) {
+        const respuestaElem = document.createElement('button');
+        respuestaElem.textContent = `${i + 1}. ${pregunta.respuestas[i].respuesta}`;
+        respuestaElem.addEventListener('click', function() {
+            document.body.removeChild(popup);
+            if (pregunta.respuestas[i].correcta) {
+                alert('Respuesta correcta!');
+                materiasObtenidasPlayer1.push(materia);
+                console.log('Materias obtenidas por Player 1: ', materiasObtenidasPlayer1);
+            } else {
+                alert('Respuesta incorrecta!');
+            }
+        });
+        popup.appendChild(respuestaElem);
+    }
+
+    document.body.appendChild(popup);
 }
 function Juego(player1, player2) {
-    // Esta es para eliminar a todos los hijos del contenedor y limpiar la pantalla
     const contenedor = document.body;
     while (contenedor.firstChild) {
         contenedor.removeChild(contenedor.firstChild);
@@ -38,6 +81,7 @@ function Juego(player1, player2) {
     const h3Player1 = document.createElement("h3");
     h3Player1.textContent = "Materias obtenidas";
     const pPlayer1 = document.createElement("p");
+    //Esto no debería cargarse por defecto¿?
     pPlayer1.textContent = "Matemáticas: Obtenida";
     player1Section.appendChild(h2Player1);
     player1Section.appendChild(h3Player1);
@@ -170,4 +214,8 @@ function iniciar() {
     contenedor.appendChild(playBtn);
 }
 
-window.onload = iniciar;
+//Permite iniciar el juego e ir cargando los datos, omgggggg
+window.onload = function (){
+    cargarDatos();
+    iniciar();
+}
